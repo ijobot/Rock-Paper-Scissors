@@ -1,0 +1,35 @@
+body {
+  height: 100vh;
+  background-color: rgb(167, 171, 212);
+}
+
+button {
+  min-width: 300px;
+  height: 200px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+img {
+  height: 150px;
+  transform: rotate(90deg);
+}
+
+.comp-side-image {
+  transform: rotate(180deg);
+  transform: rotateY(180deg);
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#message {
+  font-size: 2rem;
+}
