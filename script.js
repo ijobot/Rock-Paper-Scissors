@@ -18,13 +18,29 @@ playerChoiceArray.forEach((choice) => {
   choice.addEventListener("click", buttonClick);
 });
 
+// Globally scoped play count variable
+let count = 0;
+
 function buttonClick(event) {
+  if (playCountExceeded()) {
+    return;
+  }
   // Randomised Computer Choice
   const randomChoice = Math.floor(Math.random() * 3) + 1;
   console.log(randomChoice);
   showComputerChoice(randomChoice);
   calculateOutcome(event, randomChoice);
   resetGame();
+}
+
+function playCountExceeded() {
+  count++;
+  console.log("play count is currently", count);
+  if (count > 3) {
+    message.innerText = "You've played 3 times.  No more fun for you!";
+    return true;
+  }
+  return false;
 }
 
 // Helper function to display the computer's choice
